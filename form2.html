@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h2{color:black;
+        text-align: center;
+        background-color:darkcyan;
+        padding:20px;
+        }
+        form{
+            text-align: center;
+            color:black;
+            font-size: 18px;
+            background-color:darkcyan;
+            margin: auto;
+            width: 300px;
+        }
+    </style>
+    <body background="background2.jpg">
+        <h2>Registration Form</h2>
+        <form name="validate" onsubmit="myfunction4()">
+            <label for="fname">First name:</label><br>
+            <input type="text" onchange="myfunction1()" id="fname" required><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text"  onchange="myfunction2()" id="lname" required><br>
+            <label for="mobnum">Mobile number:</label><br>
+            <input type="text"  onchange="myfunction3()" id="mobnum" required><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" required>
+            <label for="male">Male</label>
+            <input type="radio" id="fmale" name="gender" required> 
+            <label for="fmale">Female</label><br>
+            <label for="add">Address:</label><br>
+            <textarea id="add" rows="4" placeholder="Enter your address" required></textarea><br>
+            <label >Skills:</label><br>
+            <input type="checkbox" id="java">
+            <label for="java">Java</label><
+            <input type="checkbox" id="c">
+            <label for="c">C</label>
+            <input type="checkbox" id="c++">
+            <label for="c++">C++</label>
+            <input type="checkbox" id="py">
+            <label for="py">Python</label><br>
+            <label for="qual">Qualifications</label>
+            <select id="qual" required>
+                <option>B.tech</option>
+                <option >B.E</option>
+                <option >Msc</option>
+                <option >M.Tech</option>
+              </select><br><br>
+            <input type="submit"  style="background-color: red;margin: 15x;"><br>
+            <input type="reset" value="refresh"style="background-color: green">
+        </form>
+        <script>
+            function myfunction1(){
+                var fname=document.validate.fname.value;
+                var fna=/^[a-zA-Z]*$/;
+                var flag=false;
+                if(fname.match(fna)){
+                    flag=true;
+                }
+                if(!flag){
+                    alert("Firstname is invalid\n please match the requested format");
+                }
+            }
+            function myfunction2(){
+                var lname=document.validate.lname.value;
+                var lna=/^[a-zA-Z]*$/;
+                var flag=false;
+                if(lname.match(lna)){
+                    flag=true;
+                }
+                if(!flag){
+                    alert("Lastname is invalid\n please match the requested format");
+                }
+            }
+                function myfunction3(){
+                    var mobile=document.validate.mobnum.value;
+                    var mob=/^[+91][0-9]{12}$/;
+                    var flag=false;
+                if(mobile.match(mob)){
+                    flag=true;
+                }
+                if(!flag){
+                    alert("Mobilenumber is invalid\n please match the requested format");
+                
+                }
+            
+        }
+                function myfunction4(){
+                    alert("Form submitted succesfully");
+                }
+        </script>
+    </body>
+</html>

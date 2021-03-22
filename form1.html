@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h2{color:white;
+        text-align: center;
+        padding: 20px;
+        background-color: black;
+        }
+        form{
+            text-align: center;
+            color:antiquewhite;
+            font-size: 18px;
+            background-color:black;
+            margin: auto;
+            width: 300px;
+        }
+    </style>
+    <body background="background.jpg">
+        <h2>Login Page</h2>
+        <form name="validate"action='form2.html'>
+            <label for="name">Username:</label><br>
+            <input type="text" onchange="myfunction1();" id="name" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" onchange="myfunction2();" id="password" required><br>
+            <input type="submit" value="Login" style="background-color: red;margin: 5px;"><br><br>
+        </form>
+        <script>
+            function myfunction1(){
+                var name=document.validate.name.value;
+                var na=/^[A-Za-z_]{4,16}$/;
+                var flag=false;
+                if(name.match(na)){
+                    flag=true;
+                }
+                if(!flag){
+                    alert("Username is invalid\n please match the requested format")
+                }
+            }
+                function myfunction2(){
+                    var password=document.validate.password.value;
+                    var psw=/^(?=.*\d)(?=.[a-z])(?=.*[A-Z]).{4,14}$/;
+                    var flag=0;
+                if(password.match(psw)){
+                    flag=1;
+                }
+                if(!flag){
+                    alert("password is invalid\n please match the requested format")
+                
+                }
+            
+        }
+        </script>
+    </body>
+</html>
